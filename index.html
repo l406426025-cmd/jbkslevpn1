@@ -18,6 +18,7 @@
       --btn-bg: #6366f1;
       --btn-hover: #818cf8;
       --btn-text: white;
+      --note: #a5d6ff;
     }
     [data-theme="light"] {
       --bg: #ffffff;
@@ -32,46 +33,47 @@
       --btn-bg: #5e60ce;
       --btn-hover: #7678ed;
       --btn-text: white;
+      --note: #0366d6;
     }
     body {
       margin: 0;
       font-family: 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
-      font-size: 1.05rem;
+      line-height: 1.7;
+      font-size: 1.08rem;
       transition: background 0.4s ease, color 0.4s ease;
     }
     .container {
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: 2.5rem 1.2rem 5rem;
+      padding: 3rem 1.5rem 6rem;
     }
     header {
       text-align: center;
-      padding: 4rem 0 2.5rem;
+      padding: 4.5rem 0 3rem;
     }
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 600;
-      margin: 0 0 0.6rem;
+      margin: 0 0 0.8rem;
       color: var(--accent);
     }
     .subtitle {
       color: var(--muted);
-      font-size: 1.15rem;
+      font-size: 1.2rem;
     }
     .theme-toggle {
       position: fixed;
-      top: 1.2rem;
-      right: 1.2rem;
-      width: 44px;
-      height: 44px;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: var(--card-bg);
       border: 1px solid var(--border);
       color: var(--text);
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -82,59 +84,65 @@
     .theme-toggle:hover {
       background: var(--accent);
       color: white;
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
     .warning {
       background: var(--warning-bg);
       color: var(--warning);
-      padding: 1.1rem 1.4rem;
-      border-left: 4px solid var(--warning);
-      border-radius: 6px;
-      margin: 1.8rem 0 2.8rem;
-      font-size: 1.03rem;
+      padding: 1.2rem 1.6rem;
+      border-left: 5px solid var(--warning);
+      border-radius: 8px;
+      margin: 2rem 0 3rem;
+      font-size: 1.05rem;
     }
     h2 {
-      font-size: 1.75rem;
+      font-size: 1.9rem;
       font-weight: 600;
       color: var(--accent);
-      margin: 3.5rem 0 1.4rem;
+      margin: 4rem 0 1.6rem;
       position: relative;
     }
     h2::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 0.45em;
-      width: 5px;
-      height: 1.1em;
+      top: 0.5em;
+      width: 6px;
+      height: 1.2em;
       background: var(--accent);
       border-radius: 3px;
     }
     .section {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.8rem 2rem;
-      margin-bottom: 2.4rem;
+      border-radius: 12px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.8rem;
     }
     .resource-item {
+      margin: 1.4rem 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .resource-item:last-child {
+      border-bottom: none;
+    }
+    .tool-header {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin: 1.2rem 0;
-      font-size: 1.05rem;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
     }
     .tool-name {
       font-weight: 600;
+      font-size: 1.15rem;
       color: var(--text);
-      min-width: 120px;
     }
     .download-btn {
       display: inline-block;
       background: var(--btn-bg);
       color: var(--btn-text);
-      padding: 0.7rem 1.3rem;
+      padding: 0.7rem 1.4rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 500;
@@ -146,10 +154,16 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
     }
+    .note {
+      font-size: 0.95rem;
+      color: var(--note);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
     .month {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       color: var(--muted);
-      margin: 2.4rem 0 1.2rem;
+      margin: 3rem 0 1.4rem;
       font-weight: 600;
     }
     .comparison-img,
@@ -157,29 +171,29 @@
       display: block;
       max-width: 480px;
       width: 100%;
-      margin: 1.8rem auto 1.2rem;
-      border-radius: 10px;
+      margin: 2rem auto 1.5rem;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     }
     .qr-img {
-      max-width: 220px;
+      max-width: 240px;
     }
     .comparison-text {
       text-align: center;
       font-weight: 600;
       color: var(--accent);
-      margin-bottom: 1.8rem;
-      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
     }
     .follow-box {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.8rem;
-      margin: 2.5rem 0;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 3rem 0;
       text-align: center;
-      font-size: 1.08rem;
+      font-size: 1.1rem;
     }
     .keyword {
       color: #f59e0b;
@@ -187,17 +201,17 @@
     }
     .group-box {
       text-align: center;
-      padding: 2.2rem;
+      padding: 2.5rem;
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      margin: 3rem 0 4rem;
+      border-radius: 12px;
+      margin: 3.5rem 0 5rem;
     }
     footer {
       text-align: center;
       color: var(--muted);
-      font-size: 0.95rem;
-      padding: 4rem 0 3rem;
+      font-size: 0.98rem;
+      padding: 5rem 0 4rem;
       border-top: 1px solid var(--border);
     }
     @media (prefers-color-scheme: light) {
@@ -214,6 +228,7 @@
         --btn-bg: #5e60ce;
         --btn-hover: #7678ed;
         --btn-text: white;
+        --note: #0366d6;
       }
     }
   </style>
@@ -247,10 +262,12 @@
       <p>每月只需15元左右，支持4-5台设备同时在线，全平台可用。预算少可拼团（一人3-4元）。独立客户端，傻瓜式操作，小白友好；老用户也可导入订阅。</p>
 
       <div class="resource-item">
-        <span class="tool-name">低价付费魔法:</span>
-        <a href="https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link" target="_blank" class="download-btn">
-          点击下载
-        </a>
+        <div class="tool-header">
+          <span class="tool-name">低价付费魔法</span>
+          <a href="https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link" target="_blank" class="download-btn">
+            点击下载
+          </a>
+        </div>
       </div>
     </div>
 
@@ -259,17 +276,21 @@
       <p>均为安卓破解版，仅供学习收集。安卓15兼容性不确定，需自行测试。用不了很正常，不同手机表现不同。iOS/Mac/Windows 无破解版。</p>
 
       <div class="resource-item">
-        <span class="tool-name">永久防失联发布页:</span>
-        <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="download-btn">
-          点击下载
-        </a>
+        <div class="tool-header">
+          <span class="tool-name">永久防失联发布页</span>
+          <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="download-btn">
+            点击下载
+          </a>
+        </div>
       </div>
 
       <div class="resource-item">
-        <span class="tool-name">免费魔法总链接:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=" target="_blank" class="download-btn">
-          点击下载
-        </a>
+        <div class="tool-header">
+          <span class="tool-name">免费魔法总链接</span>
+          <a href="https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=" target="_blank" class="download-btn">
+            点击下载
+          </a>
+        </div>
       </div>
 
       <div class="month">2026年资源（倒序，最上面最新）</div>
@@ -278,171 +299,255 @@
       <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
 
       <div class="resource-item">
-        <span class="tool-name">涩涩软件（彩蛋）:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">涩涩软件（彩蛋）</span>
+          <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">影视大全（含瑟瑟动漫）:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">影视大全（含瑟瑟动漫）</span>
+          <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">天喵无限重制版 (3.6更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/3a1nqv" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">天喵无限重制版 (3.6更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/3a1nqv" target="_blank" class="download-btn">点击下载</a>
+        </div>
+        <div class="note">
+          每次重置注册后填邀请码获得两天VIP，注册邮箱随便填，邀请码填：LopLfGSB，填写地方在我的页面，“加入天喵伙伴推广计划”。节点不少，但我这大部分连不上，新加坡和香港实测可用。
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">gofly (3.6更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/nkqho9" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">gofly (3.6更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/nkqho9" target="_blank" class="download-btn">点击下载</a>
+        </div>
+        <div class="note">
+          免费的，但有广告，不介意的可以用，个人建议备用。
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">Rostam (备用 3.3更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/43stky" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">Rostam可作备用 (3.3更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/43stky" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">魔方破解版 (3.1更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/xb3fy8" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">魔方破解版 (3.1更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/xb3fy8" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
 
       <h3 class="month">2月资源</h3>
       <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
 
       <div class="resource-item">
-        <span class="tool-name">涩涩软件（彩蛋）:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">涩涩软件（彩蛋）</span>
+          <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">影视大全（含瑟瑟动漫）:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">影视大全内含瑟瑟软件和动漫</span>
+          <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">白马 (2.28更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/qngf8n" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">白马 (2.28更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/qngf8n" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">NeBu (2.26更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/xekpyy" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">NeBu，油管能打开，速度没测 (2.26更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/xekpyy" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">cap (2.26更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/mojp1a" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">cap，时好时坏 (2.26更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/mojp1a" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">pony (2.26更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/ahkndf" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">pony，有免费时长能白嫖 (2.26更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/ahkndf" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">毒舌加速器 (2.26更新):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/dpkzb8" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">毒舌加速器，有免费时长 (2.26更新)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/dpkzb8" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">EGYPT (2.20):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/x8h152" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">EGYPT (2.20) 线路很多，速度自测</span>
+          <a href="https://wwwk.qyshare.com:2083/s/x8h152" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">vless (2.19):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/codqqv" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">vless（可以） (2.19)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/codqqv" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">lemon (2.19):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/codqqv" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">lemon（时好时坏） (2.19)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/codqqv" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">Soren (2.15):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/fksp9t" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">Soren不错 (2.15)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/fksp9t" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">白马 (2.15):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/zrqdta" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">白马还行 (2.15)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/zrqdta" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">proton (2.15):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/niudwu" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">proton速度一般 (2.15)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/niudwu" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">绿茶破解 (2.15):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/2hhett" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">绿茶破解，无须多言 (2.15)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/2hhett" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">pony (2.13):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/ahkndf" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">pony (2.13)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/ahkndf" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">毒舌 (2.13):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/dwinhd" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">毒舌 (2.13)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/dwinhd" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">warpi (2.8):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/q2ybgc" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">warpi (2.8)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/q2ybgc" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">leaf (2.8):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/ci212i" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">leaf很不错了算 (2.8)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/ci212i" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">Ravo (2.2):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/ety2tq" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">Ravo (2.2)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/ety2tq" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">vless (2.2):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/iim67y" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">vless (2.2)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/iim67y" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
 
       <h3 class="month">1月资源</h3>
       <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
 
       <div class="resource-item">
-        <span class="tool-name">白马 (2026.1.30):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/o0wmqu" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">白马 (2026.1.30)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/o0wmqu" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">free (2026.1.25):</span>
-        <a href="https://wwwk.qyshare.com:2083/s/gzpux0" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">free (2026.1.25)</span>
+          <a href="https://wwwk.qyshare.com:2083/s/gzpux0" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">proton:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/5vbjzf" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">proton</span>
+          <a href="https://wwwk.qyshare.com:2083/s/5vbjzf" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">白马:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/ihgz7p" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">白马</span>
+          <a href="https://wwwk.qyshare.com:2083/s/ihgz7p" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">小羽:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/h2icjk" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">小羽</span>
+          <a href="https://wwwk.qyshare.com:2083/s/h2icjk" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">原子:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/vhmy55" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">原子</span>
+          <a href="https://wwwk.qyshare.com:2083/s/vhmy55" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">biubiu:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/ui3ii9" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">biubiu</span>
+          <a href="https://wwwk.qyshare.com:2083/s/ui3ii9" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">nthlink:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/70vscp" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">nthlink</span>
+          <a href="https://wwwk.qyshare.com:2083/s/70vscp" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">proxy:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/dfpctq" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">proxy</span>
+          <a href="https://wwwk.qyshare.com:2083/s/dfpctq" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">plato:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/fagzms" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">plato</span>
+          <a href="https://wwwk.qyshare.com:2083/s/fagzms" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">edge:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/tpiqdw" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">edge</span>
+          <a href="https://wwwk.qyshare.com:2083/s/tpiqdw" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">海鸥:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/cgidqj" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">海鸥</span>
+          <a href="https://wwwk.qyshare.com:2083/s/cgidqj" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
       <div class="resource-item">
-        <span class="tool-name">快连:</span>
-        <a href="https://wwwk.qyshare.com:2083/s/sjvcin" target="_blank" class="download-btn">点击下载</a>
+        <div class="tool-header">
+          <span class="tool-name">快连</span>
+          <a href="https://wwwk.qyshare.com:2083/s/sjvcin" target="_blank" class="download-btn">点击下载</a>
+        </div>
       </div>
 
-      <p style="margin-top:2.5rem; color:var(--warning); font-weight:500;">
+      <p style="margin-top:2.8rem; color:var(--warning); font-weight:500;">
         2025年以前全部失效，已删除
       </p>
     </div>
@@ -462,7 +567,7 @@
         class="qr-img"
       >
 
-      <h2 style="margin-top:3rem;">魔法备用群</h2>
+      <h2 style="margin-top:3.5rem;">魔法备用群</h2>
       <p>防止公众号被封，务必添加</p>
       <img 
         src="https://i2.qyimage.store:2999/i/bd31bb43b28b4fb2" 

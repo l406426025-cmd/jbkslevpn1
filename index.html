@@ -15,6 +15,9 @@
       --muted: #8b949e;
       --warning: #f85149;
       --warning-bg: #490202;
+      --btn-bg: #6366f1;
+      --btn-hover: #818cf8;
+      --btn-text: white;
     }
     [data-theme="light"] {
       --bg: #ffffff;
@@ -26,6 +29,9 @@
       --muted: #57606a;
       --warning: #d73a49;
       --warning-bg: #ffeef0;
+      --btn-bg: #5e60ce;
+      --btn-hover: #7678ed;
+      --btn-text: white;
     }
     body {
       margin: 0;
@@ -112,27 +118,28 @@
       padding: 1.8rem 2rem;
       margin-bottom: 2.4rem;
     }
-    .item {
-      background: transparent;
-      border: 1px solid var(--border);
+    .link-button {
+      display: inline-block;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 0.9rem 1.4rem;
       border-radius: 8px;
-      padding: 1.1rem 1.3rem;
-      margin: 0.9rem 0;
-      font-family: 'Consolas', 'Courier New', monospace;
-      font-size: 0.98rem;
-      word-break: break-all;
-      transition: border-color 0.2s;
-    }
-    .item:hover {
-      border-color: var(--accent);
-    }
-    a {
-      color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      margin: 0.6rem 0;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
     }
-    a:hover {
-      text-decoration: underline;
-      color: var(--accent-hover);
+    .link-button:hover {
+      background: var(--btn-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+    .item {
+      margin: 1rem 0;
+      padding: 0.6rem 0;
     }
     .month {
       font-size: 1.3rem;
@@ -181,9 +188,6 @@
       border-radius: 10px;
       margin: 3rem 0 4rem;
     }
-    .group-box h2 {
-      margin: 0 0 1.2rem;
-    }
     footer {
       text-align: center;
       color: var(--muted);
@@ -202,6 +206,9 @@
         --muted: #57606a;
         --warning: #d73a49;
         --warning-bg: #ffeef0;
+        --btn-bg: #5e60ce;
+        --btn-hover: #7678ed;
+        --btn-text: white;
       }
     }
   </style>
@@ -235,9 +242,8 @@
       <p>每月只需15元左右，支持4-5台设备同时在线，全平台可用。预算少可拼团（一人3-4元）。独立客户端，傻瓜式操作，小白友好；老用户也可导入订阅。</p>
 
       <div class="item">
-        <strong>选购链接：</strong>
-        <a href="https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link" target="_blank">
-          低价付费魔法
+        <a href="https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link" target="_blank" class="link-button">
+          低价付费魔法选购
         </a>
       </div>
     </div>
@@ -247,16 +253,14 @@
       <p>均为安卓破解版，仅供学习收集。安卓15兼容性不确定，需自行测试。用不了很正常，不同手机表现不同。iOS/Mac/Windows 无破解版。</p>
 
       <div class="item">
-        <strong>永久防失联发布页：</strong><br>
-        <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank">
-          https://proxy.edgeone.pp.ua/...
+        <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="link-button">
+          永久防失联发布页
         </a>
       </div>
 
       <div class="item">
-        <strong>免费魔法总链接：</strong><br>
-        <a href="https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=" target="_blank">
-          https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=
+        <a href="https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=" target="_blank" class="link-button">
+          免费魔法总链接
         </a>
       </div>
 
@@ -264,51 +268,210 @@
 
       <h3 class="month">3月资源</h3>
       <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
-      <div class="item"><strong>涩涩软件（彩蛋）：</strong> <a href="https://wwwk.qyshare.com:2083/s/risy9e">/s/risy9e</a></div>
-      <div class="item"><strong>影视大全（含瑟瑟动漫）：</strong> <a href="https://wwwk.qyshare.com:2083/s/ginpyq">/s/ginpyq</a></div>
-      <div class="item"><strong>天喵无限重制版 (3.6更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/3a1nqv">/s/3a1nqv</a> — 重置注册填邀请码 LopLfGSB 得2天VIP（新加坡/香港可用，其他节点多连不上）</div>
-      <div class="item"><strong>gofly (3.6更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/nkqho9">/s/nkqho9</a> — 免费有广告，建议备用</div>
-      <div class="item"><strong>Rostam (备用 3.3更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/43stky">/s/43stky</a></div>
-      <div class="item"><strong>魔方破解版 (3.1更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/xb3fy8">/s/xb3fy8</a></div>
+
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="link-button">
+          涩涩软件（彩蛋）
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="link-button">
+          影视大全（含瑟瑟动漫）
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/3a1nqv" target="_blank" class="link-button">
+          天喵无限重制版 (3.6更新)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/nkqho9" target="_blank" class="link-button">
+          gofly (3.6更新)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/43stky" target="_blank" class="link-button">
+          Rostam (备用 3.3更新)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/xb3fy8" target="_blank" class="link-button">
+          魔方破解版 (3.1更新)
+        </a>
+      </div>
 
       <h3 class="month">2月资源</h3>
       <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
-      <div class="item"><strong>涩涩软件（彩蛋）：</strong> <a href="https://wwwk.qyshare.com:2083/s/risy9e">/s/risy9e</a></div>
-      <div class="item"><strong>影视大全（含瑟瑟动漫）：</strong> <a href="https://wwwk.qyshare.com:2083/s/ginpyq">/s/ginpyq</a></div>
-      <div class="item"><strong>白马 (2.28更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/qngf8n">/s/qngf8n</a></div>
-      <div class="item"><strong>NeBu (2.26更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/xekpyy">/s/xekpyy</a> — 油管可开，速度自测</div>
-      <div class="item"><strong>cap (2.26更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/mojp1a">/s/mojp1a</a> — 时好时坏</div>
-      <div class="item"><strong>pony (2.26更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/ahkndf">/s/ahkndf</a> — 有免费时长可白嫖</div>
-      <div class="item"><strong>毒舌加速器 (2.26更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/dpkzb8">/s/dpkzb8</a> — 有免费时长</div>
-      <div class="item"><strong>EGYPT (2.20)：</strong> <a href="https://wwwk.qyshare.com:2083/s/x8h152">/s/x8h152</a> — 线路多，速度自测</div>
-      <div class="item"><strong>vless (2.19)：</strong> <a href="https://wwwk.qyshare.com:2083/s/codqqv">/s/codqqv</a> — 可以用</div>
-      <div class="item"><strong>lemon (2.19)：</strong> <a href="https://wwwk.qyshare.com:2083/s/codqqv">/s/codqqv</a> — 时好时坏</div>
-      <div class="item"><strong>Soren (2.15)：</strong> <a href="https://wwwk.qyshare.com:2083/s/fksp9t">/s/fksp9t</a> — 不错</div>
-      <div class="item"><strong>白马 (2.15)：</strong> <a href="https://wwwk.qyshare.com:2083/s/zrqdta">/s/zrqdta</a> — 还行</div>
-      <div class="item"><strong>proton (2.15)：</strong> <a href="https://wwwk.qyshare.com:2083/s/niudwu">/s/niudwu</a> — 速度一般</div>
-      <div class="item"><strong>绿茶破解 (2.15)：</strong> <a href="https://wwwk.qyshare.com:2083/s/2hhett">/s/2hhett</a> — 无须多言</div>
-      <div class="item"><strong>pony (2.13)：</strong> <a href="https://wwwk.qyshare.com:2083/s/ahkndf">/s/ahkndf</a></div>
-      <div class="item"><strong>毒舌 (2.13)：</strong> <a href="https://wwwk.qyshare.com:2083/s/dwinhd">/s/dwinhd</a></div>
-      <div class="item"><strong>warpi (2.8)：</strong> <a href="https://wwwk.qyshare.com:2083/s/q2ybgc">/s/q2ybgc</a></div>
-      <div class="item"><strong>leaf (2.8)：</strong> <a href="https://wwwk.qyshare.com:2083/s/ci212i">/s/ci212i</a> — 很不错</div>
-      <div class="item"><strong>Ravo (2.2)：</strong> <a href="https://wwwk.qyshare.com:2083/s/ety2tq">/s/ety2tq</a></div>
-      <div class="item"><strong>vless (2.2)：</strong> <a href="https://wwwk.qyshare.com:2083/s/iim67y">/s/iim67y</a></div>
+
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="link-button">
+          涩涩软件（彩蛋）
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="link-button">
+          影视大全（含瑟瑟动漫）
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/qngf8n" target="_blank" class="link-button">
+          白马 (2.28更新)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/xekpyy" target="_blank" class="link-button">
+          NeBu (2.26更新)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/mojp1a" target="_blank" class="link-button">
+          cap (2.26更新)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/ahkndf" target="_blank" class="link-button">
+          pony (2.26更新)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/dpkzb8" target="_blank" class="link-button">
+          毒舌加速器 (2.26更新)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/x8h152" target="_blank" class="link-button">
+          EGYPT (2.20)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/codqqv" target="_blank" class="link-button">
+          vless (2.19)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/codqqv" target="_blank" class="link-button">
+          lemon (2.19)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/fksp9t" target="_blank" class="link-button">
+          Soren (2.15)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/zrqdta" target="_blank" class="link-button">
+          白马 (2.15)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/niudwu" target="_blank" class="link-button">
+          proton (2.15)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/2hhett" target="_blank" class="link-button">
+          绿茶破解 (2.15)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/ahkndf" target="_blank" class="link-button">
+          pony (2.13)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/dwinhd" target="_blank" class="link-button">
+          毒舌 (2.13)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/q2ybgc" target="_blank" class="link-button">
+          warpi (2.8)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/ci212i" target="_blank" class="link-button">
+          leaf (2.8)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/ety2tq" target="_blank" class="link-button">
+          Ravo (2.2)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/iim67y" target="_blank" class="link-button">
+          vless (2.2)
+        </a>
+      </div>
 
       <h3 class="month">1月资源</h3>
       <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
-      <div class="item"><strong>白马 (2026.1.30)：</strong> <a href="https://wwwk.qyshare.com:2083/s/o0wmqu">/s/o0wmqu</a></div>
-      <div class="item"><strong>free (2026.1.25)：</strong> <a href="https://wwwk.qyshare.com:2083/s/gzpux0">/s/gzpux0</a></div>
-      <div class="item"><strong>proton：</strong> <a href="https://wwwk.qyshare.com:2083/s/5vbjzf">/s/5vbjzf</a></div>
-      <div class="item"><strong>白马：</strong> <a href="https://wwwk.qyshare.com:2083/s/ihgz7p">/s/ihgz7p</a></div>
-      <div class="item"><strong>小羽：</strong> <a href="https://wwwk.qyshare.com:2083/s/h2icjk">/s/h2icjk</a></div>
-      <div class="item"><strong>原子：</strong> <a href="https://wwwk.qyshare.com:2083/s/vhmy55">/s/vhmy55</a></div>
-      <div class="item"><strong>biubiu：</strong> <a href="https://wwwk.qyshare.com:2083/s/ui3ii9">/s/ui3ii9</a></div>
-      <div class="item"><strong>nthlink：</strong> <a href="https://wwwk.qyshare.com:2083/s/70vscp">/s/70vscp</a></div>
-      <div class="item"><strong>proxy：</strong> <a href="https://wwwk.qyshare.com:2083/s/dfpctq">/s/dfpctq</a></div>
-      <div class="item"><strong>plato：</strong> <a href="https://wwwk.qyshare.com:2083/s/fagzms">/s/fagzms</a></div>
-      <div class="item"><strong>edge：</strong> <a href="https://wwwk.qyshare.com:2083/s/tpiqdw">/s/tpiqdw</a></div>
-      <div class="item"><strong>海鸥：</strong> <a href="https://wwwk.qyshare.com:2083/s/cgidqj">/s/cgidqj</a></div>
-      <div class="item"><strong>快连：</strong> <a href="https://wwwk.qyshare.com:2083/s/sjvcin">/s/sjvcin</a></div>
+
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/o0wmqu" target="_blank" class="link-button">
+          白马 (2026.1.30)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/gzpux0" target="_blank" class="link-button">
+          free (2026.1.25)
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/5vbjzf" target="_blank" class="link-button">
+          proton
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/ihgz7p" target="_blank" class="link-button">
+          白马
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/h2icjk" target="_blank" class="link-button">
+          小羽
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/vhmy55" target="_blank" class="link-button">
+          原子
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/ui3ii9" target="_blank" class="link-button">
+          biubiu
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/70vscp" target="_blank" class="link-button">
+          nthlink
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/dfpctq" target="_blank" class="link-button">
+          proxy
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/fagzms" target="_blank" class="link-button">
+          plato
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/tpiqdw" target="_blank" class="link-button">
+          edge
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/cgidqj" target="_blank" class="link-button">
+          海鸥
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://wwwk.qyshare.com:2083/s/sjvcin" target="_blank" class="link-button">
+          快连
+        </a>
+      </div>
 
       <p style="margin-top:2.5rem; color:var(--warning); font-weight:500;">
         2025年以前全部失效，已删除

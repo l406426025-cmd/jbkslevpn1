@@ -3,358 +3,344 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>免费魔法 · 2026 更新 · 安卓资源合集</title>
-  <meta name="description" content="安卓免费魔法工具合集、低价稳定付费推荐，2026年最新资源"/>
+  <title>免费魔法 · 2026 更新</title>
   <style>
     :root {
-      --bg: #0a0e1a;
-      --text: #e2e8f0;
-      --card: #111827;
-      --accent: #7c3aed;
-      --accent-glow: #a78bfa66;
-      --border: #334155;
-      --muted: #94a3b8;
-      --warning: #f87171;
-      --warning-bg: #4c1d1d22;
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --muted: #8b949e;
+      --warning: #f85149;
+      --warning-bg: #490202;
     }
     [data-theme="light"] {
-      --bg: #f8fafc;
-      --text: #0f172a;
-      --card: #ffffff;
-      --accent: #6d28d9;
-      --accent-glow: #a78bfa33;
-      --border: #e2e8f0;
-      --muted: #64748b;
-      --warning: #ef4444;
-      --warning-bg: #fee2e2;
+      --bg: #ffffff;
+      --text: #0d1117;
+      --card-bg: #f6f8fa;
+      --border: #d0d7de;
+      --accent: #5e60ce;
+      --accent-hover: #7678ed;
+      --muted: #57606a;
+      --warning: #d73a49;
+      --warning-bg: #ffeef0;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
-      transition: background 0.4s, color 0.4s;
+      line-height: 1.65;
+      font-size: 1.05rem;
+      transition: background 0.4s ease, color 0.4s ease;
     }
     .container {
-      max-width: 920px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 1.5rem 1rem 5rem;
+      padding: 2.5rem 1.2rem 5rem;
     }
     header {
       text-align: center;
-      padding: 3.5rem 0 2rem;
+      padding: 4rem 0 2.5rem;
     }
     h1 {
-      font-size: 2.8rem;
-      background: linear-gradient(90deg, var(--accent), #c084fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 0;
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin: 0 0 0.6rem;
+      color: var(--accent);
     }
     .subtitle {
       color: var(--muted);
-      font-size: 1.2rem;
-      margin-top: 0.6rem;
+      font-size: 1.15rem;
     }
     .theme-toggle {
       position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 999;
-      width: 48px;
-      height: 48px;
+      top: 1.2rem;
+      right: 1.2rem;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: rgba(124,58,237,0.15);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       color: var(--text);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s;
+      transition: all 0.25s ease;
+      z-index: 100;
     }
     .theme-toggle:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px var(--accent-glow);
+      background: var(--accent);
+      color: white;
+      transform: scale(1.08);
     }
     .warning {
       background: var(--warning-bg);
       color: var(--warning);
-      padding: 1.2rem 1.5rem;
-      border-left: 5px solid var(--warning);
-      border-radius: 8px;
-      margin: 1.5rem 0 2.5rem;
-      font-weight: 500;
+      padding: 1.1rem 1.4rem;
+      border-left: 4px solid var(--warning);
+      border-radius: 6px;
+      margin: 1.8rem 0 2.8rem;
+      font-size: 1.03rem;
     }
     h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
       color: var(--accent);
-      font-size: 1.9rem;
-      margin: 3rem 0 1.2rem;
+      margin: 3.5rem 0 1.4rem;
+      padding-left: 0.8rem;
       position: relative;
-      padding-left: 1.2rem;
     }
     h2::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 6px;
-      height: 70%;
+      top: 0.45em;
+      width: 5px;
+      height: 1.1em;
       background: var(--accent);
       border-radius: 3px;
     }
     .section {
-      background: var(--card);
+      background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 10px;
       padding: 1.8rem 2rem;
-      margin-bottom: 2.2rem;
-      transition: all 0.35s;
-      backdrop-filter: blur(8px);
-    }
-    .section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 30px var(--accent-glow);
-      border-color: var(--accent);
+      margin-bottom: 2.4rem;
     }
     .item {
-      background: rgba(30,41,59,0.4);
-      padding: 1.1rem 1.4rem;
-      border-radius: 10px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
       margin: 0.9rem 0;
-      border: 1px dashed var(--border);
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.98rem;
       word-break: break-all;
-      font-family: 'Consolas', monospace;
-      transition: all 0.25s;
+      transition: border-color 0.2s;
     }
     .item:hover {
       border-color: var(--accent);
-      background: rgba(124,58,237,0.08);
     }
     a {
-      color: #c4b5fd;
+      color: var(--accent);
       text-decoration: none;
     }
     a:hover {
-      color: #e9d5ff;
       text-decoration: underline;
+      color: var(--accent-hover);
     }
     .month {
+      font-size: 1.3rem;
       color: var(--muted);
+      margin: 2.4rem 0 1.2rem;
       font-weight: 600;
-      margin: 2.2rem 0 1rem;
-      font-size: 1.35rem;
     }
-    .comparison-img {
-      display: block;
-      max-width: 100%;
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 20px var(--accent-glow);
-      margin: 1.5rem auto 1rem;
-    }
-    .comparison-text {
-      font-weight: bold;
-      color: var(--accent);
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
+    .comparison-img,
     .qr-img {
       display: block;
-      max-width: 240px;
-      margin: 1.5rem auto;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35), 0 0 15px var(--accent-glow);
+      max-width: 480px;
+      width: 100%;
+      margin: 1.8rem auto 1.2rem;
+      border-radius: 10px;
       border: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .qr-img {
+      max-width: 220px;
+    }
+    .comparison-text {
+      text-align: center;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.8rem;
+      font-size: 1.15rem;
     }
     .follow-box {
-      background: rgba(124,58,237,0.12);
-      border: 1px solid var(--accent);
-      border-radius: 12px;
-      padding: 1.6rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.8rem;
       margin: 2.5rem 0;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
     }
     .keyword {
-      color: #fbbf24;
-      font-weight: bold;
-      font-size: 1.2em;
+      color: #f59e0b;
+      font-weight: 700;
     }
     .group-box {
       text-align: center;
-      padding: 2.5rem;
-      margin: 3rem 0 4rem;
-      background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(139,92,246,0.05));
+      padding: 2.2rem;
+      background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 10px;
+      margin: 3rem 0 4rem;
+    }
+    .group-box h2 {
+      margin: 0 0 1.2rem;
     }
     footer {
       text-align: center;
       color: var(--muted);
-      padding: 4rem 0 3rem;
       font-size: 0.95rem;
+      padding: 4rem 0 3rem;
       border-top: 1px solid var(--border);
     }
     @media (prefers-color-scheme: light) {
       :root:not([data-theme="dark"]) {
-        --bg: #f8fafc;
-        --text: #0f172a;
-        --card: #ffffff;
-        --accent: #6d28d9;
-        --accent-glow: #a78bfa33;
-        --border: #e2e8f0;
-        --muted: #64748b;
-        --warning: #ef4444;
-        --warning-bg: #fee2e2;
+        --bg: #ffffff;
+        --text: #0d1117;
+        --card-bg: #f6f8fa;
+        --border: #d0d7de;
+        --accent: #5e60ce;
+        --accent-hover: #7678ed;
+        --muted: #57606a;
+        --warning: #d73a49;
+        --warning-bg: #ffeef0;
       }
     }
   </style>
 </head>
 <body data-theme="auto">
 
-  <button class="theme-toggle" title="切换主题">☀️</button>
+  <button class="theme-toggle" title="切换深色/亮色">☀️</button>
 
   <div class="container">
 
     <header>
-      <h1>免费魔法 · 2026</h1>
-      <div class="subtitle">安卓免费资源合集 + 低价稳定推荐（仅供学习参考）</div>
+      <h1>免费魔法 · 2026 更新</h1>
+      <div class="subtitle">安卓免费资源 + 低价稳定推荐</div>
     </header>
 
     <div class="warning">
-      ⚠️ 注意：用了免费魔法以后，如果某些软件还是注册不了、网络异常、封号等情况，基本是因为免费魔法用的人多IP太脏，换一个其他免费魔法或者购买低价付费的，推荐本人自用3年的魔法纯净度还不错！
+      ⚠️ 注意：免费节点用的人多容易 IP 脏，导致注册失败、网络异常或封号。建议换节点或考虑低价付费（本人用3年很稳）。
     </div>
 
     <div class="section">
-      <h2>低价魔法列表 ↓（稳定3年）</h2>
+      <h2>低价魔法列表（稳定3年）</h2>
 
       <img 
         src="https://i2.qyimage.store:2999/i/6721f00fa62f4a95" 
-        alt="左边我自用 vs 右边快某连 对比图" 
+        alt="对比图 - 左自用 右快连" 
         class="comparison-img"
-        loading="lazy"
       >
       <div class="comparison-text">**左边我自用，右边快某连**</div>
 
-      <p>低价付费魔法挑选的三个原则 ①连接稳定 ②运营时间久 ③价格性价比。</p>
-      <p>挑选了几个稳定速度快便宜的魔法，不需要世面均价30-50，每月只要15块，至少支持4-5个设备同时在线，不限手机系统，不限设备全端可用，所以预算不足也可以和朋友拼团，这样一人只要3-4块每月，花小钱从此告别不稳定！再也不用被搞心态的魔法折磨了，筛选的魔法都有独立客户端，不用配置，傻瓜操作，适合小白！当然老司机也可以选择导入订阅！</p>
+      <p>挑选原则：①连接稳定 ②运营时间长 ③性价比高</p>
+      <p>每月只需15元左右，支持4-5台设备同时在线，全平台可用。预算少可拼团（一人3-4元）。独立客户端，傻瓜式操作，小白友好；老用户也可导入订阅。</p>
 
       <div class="item">
-        <strong>低价魔法选购：</strong><br>
-        <a href="https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link" target="_blank" rel="noopener noreferrer">
-          https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link
+        <strong>选购链接：</strong>
+        <a href="https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link" target="_blank">
+          低价付费魔法
         </a>
       </div>
     </div>
 
     <div class="section">
-      <h2>免费魔法列表 ↓（仅安卓）</h2>
-      <p>以下全是安卓坡解魔法，本人非原创，只做长期收集聚合，安卓15也不确定哪个可以用，要自己试，每个手机情况不一样，用不了也没办法，安卓15就是很烦，免费魔法仅限安卓，其他的系统，iOS Mac wind都没有坡解版…</p>
+      <h2>免费魔法列表（仅限安卓）</h2>
+      <p>均为安卓破解版，仅供学习收集。安卓15兼容性不确定，需自行测试。用不了很正常，不同手机表现不同。iOS/Mac/Windows 无破解版。</p>
 
       <div class="item">
         <strong>永久防失联发布页：</strong><br>
-        <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" rel="noopener noreferrer">
-          https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F
+        <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank">
+          https://proxy.edgeone.pp.ua/...
         </a>
       </div>
 
       <div class="item">
         <strong>免费魔法总链接：</strong><br>
-        <a href="https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=" target="_blank" rel="noopener noreferrer">
+        <a href="https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=" target="_blank">
           https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=
         </a>
       </div>
 
-      <div class="month">2026年资源倒序 ↓（最上面为最新更新）</div>
+      <div class="month">2026年资源（倒序，最上面最新）</div>
 
       <h3 class="month">3月资源</h3>
-      <p style="color:var(--warning); font-weight:500;">所有链接复制到浏览器打开！微信会拦截</p>
-      <div class="item"><strong>（彩蛋）涩涩软件：</strong> <a href="https://wwwk.qyshare.com:2083/s/risy9e">https://wwwk.qyshare.com:2083/s/risy9e</a></div>
-      <div class="item"><strong>（彩蛋）影视大全，内含瑟瑟和动漫：</strong> <a href="https://wwwk.qyshare.com:2083/s/ginpyq">https://wwwk.qyshare.com:2083/s/ginpyq</a></div>
-      <div class="item"><strong>天喵无限重制版（3.6更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/3a1nqv">https://wwwk.qyshare.com:2083/s/3a1nqv</a><br>每次重置注册后填邀请码获得两天VIP，注册邮箱随便填，邀请码填：LopLfGSB，填写地方在我的页面，"加入天喵伙伴推广计划"，节点不少，但我这大部分连不上，新加坡和香港实测可用</div>
-      <div class="item"><strong>gofly（3.6更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/nkqho9">https://wwwk.qyshare.com:2083/s/nkqho9</a><br>免费的，但有广告，不介意的可以用，个人建议备用</div>
-      <div class="item"><strong>Rostam可作备用（3.3更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/43stky">https://wwwk.qyshare.com:2083/s/43stky</a></div>
-      <div class="item"><strong>魔方破解版（3.1更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/xb3fy8">https://wwwk.qyshare.com:2083/s/xb3fy8</a></div>
+      <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
+      <div class="item"><strong>涩涩软件（彩蛋）：</strong> <a href="https://wwwk.qyshare.com:2083/s/risy9e">/s/risy9e</a></div>
+      <div class="item"><strong>影视大全（含瑟瑟动漫）：</strong> <a href="https://wwwk.qyshare.com:2083/s/ginpyq">/s/ginpyq</a></div>
+      <div class="item"><strong>天喵无限重制版 (3.6更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/3a1nqv">/s/3a1nqv</a> — 重置注册填邀请码 LopLfGSB 得2天VIP（新加坡/香港可用，其他节点多连不上）</div>
+      <div class="item"><strong>gofly (3.6更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/nkqho9">/s/nkqho9</a> — 免费有广告，建议备用</div>
+      <div class="item"><strong>Rostam (备用 3.3更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/43stky">/s/43stky</a></div>
+      <div class="item"><strong>魔方破解版 (3.1更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/xb3fy8">/s/xb3fy8</a></div>
 
       <h3 class="month">2月资源</h3>
-      <p style="color:var(--warning); font-weight:500;">所有链接复制到浏览器打开！微信会拦截</p>
-      <div class="item"><strong>（彩蛋）涩涩软件：</strong> <a href="https://wwwk.qyshare.com:2083/s/risy9e">https://wwwk.qyshare.com:2083/s/risy9e</a></div>
-      <div class="item"><strong>（彩蛋）影视大全内含瑟瑟软件和动漫：</strong> <a href="https://wwwk.qyshare.com:2083/s/ginpyq">https://wwwk.qyshare.com:2083/s/ginpyq</a></div>
-      <div class="item"><strong>白马（2.28更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/qngf8n">https://wwwk.qyshare.com:2083/s/qngf8n</a></div>
-      <div class="item"><strong>NeBu，油管能打开，速度没测（2.26更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/xekpyy">https://wwwk.qyshare.com:2083/s/xekpyy</a></div>
-      <div class="item"><strong>cap，时好时坏（2.26更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/mojp1a">https://wwwk.qyshare.com:2083/s/mojp1a</a></div>
-      <div class="item"><strong>pony，有免费时长能白嫖（2.26更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/ahkndf">https://wwwk.qyshare.com:2083/s/ahkndf</a></div>
-      <div class="item"><strong>毒舌加速器，有免费时长（2.26更新）：</strong> <a href="https://wwwk.qyshare.com:2083/s/dpkzb8">https://wwwk.qyshare.com:2083/s/dpkzb8</a></div>
-      <div class="item"><strong>EGYPT（2.20）线路很多，速度自测：</strong> <a href="https://wwwk.qyshare.com:2083/s/x8h152">https://wwwk.qyshare.com:2083/s/x8h152</a></div>
-      <div class="item"><strong>vless（可以）（2.19）：</strong> <a href="https://wwwk.qyshare.com:2083/s/codqqv">https://wwwk.qyshare.com:2083/s/codqqv</a></div>
-      <div class="item"><strong>lemon（时好时坏）（2.19）：</strong> <a href="https://wwwk.qyshare.com:2083/s/codqqv">https://wwwk.qyshare.com:2083/s/codqqv</a></div>
-      <div class="item"><strong>Soren不错（2.15）：</strong> <a href="https://wwwk.qyshare.com:2083/s/fksp9t">https://wwwk.qyshare.com:2083/s/fksp9t</a></div>
-      <div class="item"><strong>白马还行（2.15）：</strong> <a href="https://wwwk.qyshare.com:2083/s/zrqdta">https://wwwk.qyshare.com:2083/s/zrqdta</a></div>
-      <div class="item"><strong>proton速度一般（2.15）：</strong> <a href="https://wwwk.qyshare.com:2083/s/niudwu">https://wwwk.qyshare.com:2083/s/niudwu</a></div>
-      <div class="item"><strong>绿茶破解，无须多言（2.15）：</strong> <a href="https://wwwk.qyshare.com:2083/s/2hhett">https://wwwk.qyshare.com:2083/s/2hhett</a></div>
-      <div class="item"><strong>pony（2.13）：</strong> <a href="https://wwwk.qyshare.com:2083/s/ahkndf">https://wwwk.qyshare.com:2083/s/ahkndf</a></div>
-      <div class="item"><strong>毒舌（2.13）：</strong> <a href="https://wwwk.qyshare.com:2083/s/dwinhd">https://wwwk.qyshare.com:2083/s/dwinhd</a></div>
-      <div class="item"><strong>warpi（2.8）：</strong> <a href="https://wwwk.qyshare.com:2083/s/q2ybgc">https://wwwk.qyshare.com:2083/s/q2ybgc</a></div>
-      <div class="item"><strong>leaf很不错了算（2.8）：</strong> <a href="https://wwwk.qyshare.com:2083/s/ci212i">https://wwwk.qyshare.com:2083/s/ci212i</a></div>
-      <div class="item"><strong>Ravo（2.2）：</strong> <a href="https://wwwk.qyshare.com:2083/s/ety2tq">https://wwwk.qyshare.com:2083/s/ety2tq</a></div>
-      <div class="item"><strong>vless（2.2）：</strong> <a href="https://wwwk.qyshare.com:2083/s/iim67y">https://wwwk.qyshare.com:2083/s/iim67y</a></div>
+      <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
+      <div class="item"><strong>涩涩软件（彩蛋）：</strong> <a href="https://wwwk.qyshare.com:2083/s/risy9e">/s/risy9e</a></div>
+      <div class="item"><strong>影视大全（含瑟瑟动漫）：</strong> <a href="https://wwwk.qyshare.com:2083/s/ginpyq">/s/ginpyq</a></div>
+      <div class="item"><strong>白马 (2.28更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/qngf8n">/s/qngf8n</a></div>
+      <div class="item"><strong>NeBu (2.26更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/xekpyy">/s/xekpyy</a> — 油管可开，速度自测</div>
+      <div class="item"><strong>cap (2.26更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/mojp1a">/s/mojp1a</a> — 时好时坏</div>
+      <div class="item"><strong>pony (2.26更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/ahkndf">/s/ahkndf</a> — 有免费时长可白嫖</div>
+      <div class="item"><strong>毒舌加速器 (2.26更新)：</strong> <a href="https://wwwk.qyshare.com:2083/s/dpkzb8">/s/dpkzb8</a> — 有免费时长</div>
+      <div class="item"><strong>EGYPT (2.20)：</strong> <a href="https://wwwk.qyshare.com:2083/s/x8h152">/s/x8h152</a> — 线路多，速度自测</div>
+      <div class="item"><strong>vless (2.19)：</strong> <a href="https://wwwk.qyshare.com:2083/s/codqqv">/s/codqqv</a> — 可以用</div>
+      <div class="item"><strong>lemon (2.19)：</strong> <a href="https://wwwk.qyshare.com:2083/s/codqqv">/s/codqqv</a> — 时好时坏</div>
+      <div class="item"><strong>Soren (2.15)：</strong> <a href="https://wwwk.qyshare.com:2083/s/fksp9t">/s/fksp9t</a> — 不错</div>
+      <div class="item"><strong>白马 (2.15)：</strong> <a href="https://wwwk.qyshare.com:2083/s/zrqdta">/s/zrqdta</a> — 还行</div>
+      <div class="item"><strong>proton (2.15)：</strong> <a href="https://wwwk.qyshare.com:2083/s/niudwu">/s/niudwu</a> — 速度一般</div>
+      <div class="item"><strong>绿茶破解 (2.15)：</strong> <a href="https://wwwk.qyshare.com:2083/s/2hhett">/s/2hhett</a> — 无须多言</div>
+      <div class="item"><strong>pony (2.13)：</strong> <a href="https://wwwk.qyshare.com:2083/s/ahkndf">/s/ahkndf</a></div>
+      <div class="item"><strong>毒舌 (2.13)：</strong> <a href="https://wwwk.qyshare.com:2083/s/dwinhd">/s/dwinhd</a></div>
+      <div class="item"><strong>warpi (2.8)：</strong> <a href="https://wwwk.qyshare.com:2083/s/q2ybgc">/s/q2ybgc</a></div>
+      <div class="item"><strong>leaf (2.8)：</strong> <a href="https://wwwk.qyshare.com:2083/s/ci212i">/s/ci212i</a> — 很不错</div>
+      <div class="item"><strong>Ravo (2.2)：</strong> <a href="https://wwwk.qyshare.com:2083/s/ety2tq">/s/ety2tq</a></div>
+      <div class="item"><strong>vless (2.2)：</strong> <a href="https://wwwk.qyshare.com:2083/s/iim67y">/s/iim67y</a></div>
 
       <h3 class="month">1月资源</h3>
-      <p style="color:var(--warning); font-weight:500;">所有链接复制到浏览器打开！微信会拦截</p>
-      <div class="item"><strong>白马（2026.1.30）：</strong> <a href="https://wwwk.qyshare.com:2083/s/o0wmqu">https://wwwk.qyshare.com:2083/s/o0wmqu</a></div>
-      <div class="item"><strong>free（2026.1.25）：</strong> <a href="https://wwwk.qyshare.com:2083/s/gzpux0">https://wwwk.qyshare.com:2083/s/gzpux0</a></div>
-      <div class="item"><strong>proton：</strong> <a href="https://wwwk.qyshare.com:2083/s/5vbjzf">https://wwwk.qyshare.com:2083/s/5vbjzf</a></div>
-      <div class="item"><strong>白马：</strong> <a href="https://wwwk.qyshare.com:2083/s/ihgz7p">https://wwwk.qyshare.com:2083/s/ihgz7p</a></div>
-      <div class="item"><strong>小羽：</strong> <a href="https://wwwk.qyshare.com:2083/s/h2icjk">https://wwwk.qyshare.com:2083/s/h2icjk</a></div>
-      <div class="item"><strong>原子：</strong> <a href="https://wwwk.qyshare.com:2083/s/vhmy55">https://wwwk.qyshare.com:2083/s/vhmy55</a></div>
-      <div class="item"><strong>biubiu：</strong> <a href="https://wwwk.qyshare.com:2083/s/ui3ii9">https://wwwk.qyshare.com:2083/s/ui3ii9</a></div>
-      <div class="item"><strong>nthlink：</strong> <a href="https://wwwk.qyshare.com:2083/s/70vscp">https://wwwk.qyshare.com:2083/s/70vscp</a></div>
-      <div class="item"><strong>proxy：</strong> <a href="https://wwwk.qyshare.com:2083/s/dfpctq">https://wwwk.qyshare.com:2083/s/dfpctq</a></div>
-      <div class="item"><strong>plato：</strong> <a href="https://wwwk.qyshare.com:2083/s/fagzms">https://wwwk.qyshare.com:2083/s/fagzms</a></div>
-      <div class="item"><strong>edge：</strong> <a href="https://wwwk.qyshare.com:2083/s/tpiqdw">https://wwwk.qyshare.com:2083/s/tpiqdw</a></div>
-      <div class="item"><strong>海鸥：</strong> <a href="https://wwwk.qyshare.com:2083/s/cgidqj">https://wwwk.qyshare.com:2083/s/cgidqj</a></div>
-      <div class="item"><strong>快连：</strong> <a href="https://wwwk.qyshare.com:2083/s/sjvcin">https://wwwk.qyshare.com:2083/s/sjvcin</a></div>
+      <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
+      <div class="item"><strong>白马 (2026.1.30)：</strong> <a href="https://wwwk.qyshare.com:2083/s/o0wmqu">/s/o0wmqu</a></div>
+      <div class="item"><strong>free (2026.1.25)：</strong> <a href="https://wwwk.qyshare.com:2083/s/gzpux0">/s/gzpux0</a></div>
+      <div class="item"><strong>proton：</strong> <a href="https://wwwk.qyshare.com:2083/s/5vbjzf">/s/5vbjzf</a></div>
+      <div class="item"><strong>白马：</strong> <a href="https://wwwk.qyshare.com:2083/s/ihgz7p">/s/ihgz7p</a></div>
+      <div class="item"><strong>小羽：</strong> <a href="https://wwwk.qyshare.com:2083/s/h2icjk">/s/h2icjk</a></div>
+      <div class="item"><strong>原子：</strong> <a href="https://wwwk.qyshare.com:2083/s/vhmy55">/s/vhmy55</a></div>
+      <div class="item"><strong>biubiu：</strong> <a href="https://wwwk.qyshare.com:2083/s/ui3ii9">/s/ui3ii9</a></div>
+      <div class="item"><strong>nthlink：</strong> <a href="https://wwwk.qyshare.com:2083/s/70vscp">/s/70vscp</a></div>
+      <div class="item"><strong>proxy：</strong> <a href="https://wwwk.qyshare.com:2083/s/dfpctq">/s/dfpctq</a></div>
+      <div class="item"><strong>plato：</strong> <a href="https://wwwk.qyshare.com:2083/s/fagzms">/s/fagzms</a></div>
+      <div class="item"><strong>edge：</strong> <a href="https://wwwk.qyshare.com:2083/s/tpiqdw">/s/tpiqdw</a></div>
+      <div class="item"><strong>海鸥：</strong> <a href="https://wwwk.qyshare.com:2083/s/cgidqj">/s/cgidqj</a></div>
+      <div class="item"><strong>快连：</strong> <a href="https://wwwk.qyshare.com:2083/s/sjvcin">/s/sjvcin</a></div>
 
-      <p style="margin-top: 2.5rem; color: var(--warning); font-weight: 500;">
-        2025年以前的全部失效，已删除
+      <p style="margin-top:2.5rem; color:var(--warning); font-weight:500;">
+        2025年以前全部失效，已删除
       </p>
     </div>
 
     <div class="follow-box">
-      <p>关注本号，持续收集免费魔法</p>
-      <p>本文档失效去本号后台回复：<span class="keyword">魔法</span></p>
-      <p>即可获取最新文档链接</p>
+      <p>关注本号，持续获取免费魔法更新</p>
+      <p>本文档失效 → 后台回复 <span class="keyword">魔法</span></p>
+      <p>即可得到最新链接</p>
     </div>
 
     <div class="group-box">
       <h2>薅羊毛免费零撸副业圈子</h2>
-      <p style="font-size: 1.15rem; margin: 1rem 0 1.5rem;">扫码进群</p>
+      <p>扫码进群</p>
       <img 
         src="https://i2.qyimage.store:2999/i/2e26026394214f57" 
-        alt="薅羊毛免费零撸副业圈子二维码" 
+        alt="薅羊毛副业圈子二维码" 
         class="qr-img"
-        loading="lazy"
       >
 
-      <h2 style="margin: 3rem 0 1rem;">魔法备用群</h2>
-      <p style="font-size: 1.15rem; margin: 1rem 0 1.5rem;">防止公众号被封务必添加本群</p>
+      <h2 style="margin-top:3rem;">魔法备用群</h2>
+      <p>防止公众号被封，务必添加</p>
       <img 
         src="https://i2.qyimage.store:2999/i/bd31bb43b28b4fb2" 
         alt="魔法备用群二维码" 
         class="qr-img"
-        loading="lazy"
       >
     </div>
 
     <footer>
-      本页面仅作信息整理 · 请遵守当地法律法规 · 2026 更新维护
+      信息分享用途 · 请遵守当地法律法规 · 2026 更新
     </footer>
 
   </div>
@@ -362,10 +348,7 @@
   <script>
     const toggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
-    let theme = localStorage.getItem('theme');
-    if (!theme) {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
+    let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     html.setAttribute('data-theme', theme);
     toggle.textContent = theme === 'light' ? '🌙' : '☀️';
 

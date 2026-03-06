@@ -6,229 +6,242 @@
   <title>免费魔法 · 2026 更新</title>
   <style>
     :root {
-      --bg: #0d1117;
-      --text: #e6edf3;
-      --card-bg: #161b22;
-      --border: #30363d;
-      --accent: #6366f1;
-      --accent-hover: #818cf8;
-      --muted: #8b949e;
-      --warning: #f85149;
-      --warning-bg: #490202;
-      --btn-bg: #6366f1;
-      --btn-hover: #818cf8;
+      --bg: #f8f9fc;
+      --text: #1f2937;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --accent: #4f46e5;
+      --accent-soft: #6366f1;
+      --muted: #6b7280;
+      --warning: #ef4444;
+      --warning-bg: #fef2f2;
+      --note: #4b5563;
+      --btn-bg: #4f46e5;
+      --btn-hover: #4338ca;
       --btn-text: white;
-      --note: #a5d6ff;
     }
-    [data-theme="light"] {
-      --bg: #ffffff;
-      --text: #0d1117;
-      --card-bg: #f6f8fa;
-      --border: #d0d7de;
-      --accent: #5e60ce;
-      --accent-hover: #7678ed;
-      --muted: #57606a;
-      --warning: #d73a49;
-      --warning-bg: #ffeef0;
-      --btn-bg: #5e60ce;
-      --btn-hover: #7678ed;
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --card: #1e293b;
+      --border: #334155;
+      --accent: #818cf8;
+      --accent-soft: #a5b4fc;
+      --muted: #94a3b8;
+      --warning: #f87171;
+      --warning-bg: #4c1d1d;
+      --note: #cbd5e1;
+      --btn-bg: #6366f1;
+      --btn-hover: #4f46e5;
       --btn-text: white;
-      --note: #0366d6;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
-      margin: 0;
-      font-family: 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
+      min-height: 100vh;
       transition: background 0.4s ease, color 0.4s ease;
     }
     .container {
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 3rem 1.5rem 6rem;
     }
     header {
       text-align: center;
-      padding: 4.5rem 0 3rem;
+      padding: 5rem 0 3rem;
     }
     h1 {
-      font-size: 2.6rem;
-      font-weight: 600;
-      margin: 0 0 0.8rem;
+      font-size: 2.8rem;
+      font-weight: 700;
       color: var(--accent);
+      margin-bottom: 0.8rem;
     }
     .subtitle {
       color: var(--muted);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
     .theme-toggle {
       position: fixed;
       top: 1.5rem;
       right: 1.5rem;
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: var(--card-bg);
+      background: var(--card);
       border: 1px solid var(--border);
       color: var(--text);
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.25s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
       z-index: 100;
     }
     .theme-toggle:hover {
-      background: var(--accent);
-      color: white;
       transform: scale(1.1);
+      box-shadow: 0 4px 16px rgba(79,70,229,0.25);
     }
     .warning {
       background: var(--warning-bg);
       color: var(--warning);
-      padding: 1.2rem 1.6rem;
+      padding: 1.3rem 1.6rem;
       border-left: 5px solid var(--warning);
       border-radius: 8px;
       margin: 2rem 0 3rem;
       font-size: 1.05rem;
+      font-weight: 500;
     }
     h2 {
-      font-size: 1.9rem;
-      font-weight: 600;
+      font-size: 1.95rem;
+      font-weight: 700;
       color: var(--accent);
-      margin: 4rem 0 1.6rem;
+      margin: 4.5rem 0 1.8rem;
       position: relative;
+      padding-left: 1rem;
     }
     h2::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 0.5em;
+      top: 0.55em;
       width: 6px;
       height: 1.2em;
       background: var(--accent);
       border-radius: 3px;
     }
     .section {
-      background: var(--card-bg);
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 2rem 2.2rem;
-      margin-bottom: 2.8rem;
+      padding: 2.2rem 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
     .resource-item {
-      margin: 1.4rem 0;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .resource-item:last-child {
-      border-bottom: none;
+      margin: 1.6rem 0;
+      padding: 1.2rem;
+      background: rgba(79,70,229,0.03);
+      border-radius: 10px;
+      border: 1px solid rgba(79,70,229,0.1);
     }
     .tool-header {
       display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 0.6rem;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 0.8rem;
+      flex-wrap: wrap;
     }
     .tool-name {
-      font-weight: 600;
-      font-size: 1.15rem;
+      font-weight: 700;
+      font-size: 1.18rem;
       color: var(--text);
+      flex: 1;
+      min-width: 140px;
     }
     .download-btn {
-      display: inline-block;
       background: var(--btn-bg);
       color: var(--btn-text);
-      padding: 0.7rem 1.4rem;
-      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s ease;
-      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      white-space: nowrap;
     }
     .download-btn:hover {
       background: var(--btn-hover);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 6px 16px rgba(79,70,229,0.3);
     }
     .note {
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       color: var(--note);
-      margin-top: 0.5rem;
-      line-height: 1.5;
+      margin-top: 0.8rem;
+      line-height: 1.6;
     }
     .month {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
+      font-weight: 700;
       color: var(--muted);
-      margin: 3rem 0 1.4rem;
-      font-weight: 600;
+      margin: 3.5rem 0 1.6rem;
     }
     .comparison-img,
     .qr-img {
       display: block;
-      max-width: 480px;
+      max-width: 500px;
       width: 100%;
-      margin: 2rem auto 1.5rem;
+      margin: 2.2rem auto 1.8rem;
       border-radius: 12px;
       border: 1px solid var(--border);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
     .qr-img {
-      max-width: 240px;
+      max-width: 260px;
     }
     .comparison-text {
       text-align: center;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--accent);
-      margin-bottom: 2rem;
-      font-size: 1.2rem;
+      margin-bottom: 2.2rem;
+      font-size: 1.25rem;
     }
     .follow-box {
-      background: var(--card-bg);
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 2rem;
+      padding: 2.2rem;
       margin: 3rem 0;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.12rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
     .keyword {
-      color: #f59e0b;
+      color: #d97706;
       font-weight: 700;
     }
     .group-box {
       text-align: center;
-      padding: 2.5rem;
-      background: var(--card-bg);
+      padding: 3rem 2rem;
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      margin: 3.5rem 0 5rem;
+      margin: 4rem 0 5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
     footer {
       text-align: center;
       color: var(--muted);
-      font-size: 0.98rem;
+      font-size: 1rem;
       padding: 5rem 0 4rem;
       border-top: 1px solid var(--border);
     }
-    @media (prefers-color-scheme: light) {
-      :root:not([data-theme="dark"]) {
-        --bg: #ffffff;
-        --text: #0d1117;
-        --card-bg: #f6f8fa;
-        --border: #d0d7de;
-        --accent: #5e60ce;
-        --accent-hover: #7678ed;
-        --muted: #57606a;
-        --warning: #d73a49;
-        --warning-bg: #ffeef0;
-        --btn-bg: #5e60ce;
-        --btn-hover: #7678ed;
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f172a;
+        --text: #e2e8f0;
+        --card: #1e293b;
+        --border: #334155;
+        --accent: #818cf8;
+        --accent-hover: #a5b4fc;
+        --muted: #94a3b8;
+        --warning: #f87171;
+        --warning-bg: #4c1d1d;
+        --note: #cbd5e1;
+        --btn-bg: #6366f1;
+        --btn-hover: #4f46e5;
         --btn-text: white;
-        --note: #0366d6;
       }
     }
   </style>
@@ -241,11 +254,11 @@
 
     <header>
       <h1>免费魔法 · 2026 更新</h1>
-      <div class="subtitle">安卓免费资源 + 低价稳定推荐</div>
+      <div class="subtitle">安卓免费资源合集 + 低价稳定付费推荐</div>
     </header>
 
     <div class="warning">
-      ⚠️ 注意：免费节点用的人多容易 IP 脏，导致注册失败、网络异常或封号。建议换节点或考虑低价付费（本人用3年很稳）。
+      ⚠️ 注意：用了免费魔法以后，如果某些软件还是注册不了、网络异常、封号等情况，基本是因为免费魔法用的人多IP太脏，换一个其他免费魔法或者购买低价付费的，推荐本人自用3年的魔法纯净度还不错！
     </div>
 
     <div class="section">
@@ -258,8 +271,8 @@
       >
       <div class="comparison-text">**左边我自用，右边快某连**</div>
 
-      <p>挑选原则：①连接稳定 ②运营时间长 ③性价比高</p>
-      <p>每月只需15元左右，支持4-5台设备同时在线，全平台可用。预算少可拼团（一人3-4元）。独立客户端，傻瓜式操作，小白友好；老用户也可导入订阅。</p>
+      <p>低价付费魔法挑选的三个原则 ①连接稳定 ②运营时间久 ③价格性价比。</p>
+      <p>挑选了几个稳定速度快便宜的魔法，不需要世面均价30-50，每月只要15块，至少支持4-5个设备同时在线，不限手机系统，不限设备全端可用，所以预算不足也可以和朋友拼团，这样一人只要3-4块每月，花小钱从此告别不稳定！再也不用被搞心态的魔法折磨了，筛选的魔法都有独立客户端，不用配置，傻瓜操作，适合小白！当然老司机也可以选择导入订阅！</p>
 
       <div class="resource-item">
         <div class="tool-header">
@@ -273,7 +286,7 @@
 
     <div class="section">
       <h2>免费魔法列表（仅限安卓）</h2>
-      <p>均为安卓破解版，仅供学习收集。安卓15兼容性不确定，需自行测试。用不了很正常，不同手机表现不同。iOS/Mac/Windows 无破解版。</p>
+      <p>以下全是安卓坡解魔法，本人非原创，只做长期收集聚合，安卓15也不确定哪个可以用，要自己试，每个手机情况不一样，用不了也没办法，安卓15就是很烦，免费魔法仅限安卓，其他的系统，iOS Mac wind都没有坡解版…</p>
 
       <div class="resource-item">
         <div class="tool-header">
@@ -296,17 +309,17 @@
       <div class="month">2026年资源（倒序，最上面最新）</div>
 
       <h3 class="month">3月资源</h3>
-      <p style="color:var(--warning);">链接请复制到浏览器打开，微信常拦截</p>
+      <p style="color:var(--warning);">所有链接复制到浏览器打开！微信会拦截</p>
 
       <div class="resource-item">
         <div class="tool-header">
-          <span class="tool-name">涩涩软件（彩蛋）</span>
+          <span class="tool-name">（彩蛋）涩涩软件</span>
           <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="download-btn">点击下载</a>
         </div>
       </div>
       <div class="resource-item">
         <div class="tool-header">
-          <span class="tool-name">影视大全（含瑟瑟动漫）</span>
+          <span class="tool-name">（彩蛋）影视大全，内含瑟瑟和动漫</span>
           <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="download-btn">点击下载</a>
         </div>
       </div>
@@ -316,7 +329,7 @@
           <a href="https://wwwk.qyshare.com:2083/s/3a1nqv" target="_blank" class="download-btn">点击下载</a>
         </div>
         <div class="note">
-          每次重置注册后填邀请码获得两天VIP，注册邮箱随便填，邀请码填：LopLfGSB，填写地方在我的页面，“加入天喵伙伴推广计划”。节点不少，但我这大部分连不上，新加坡和香港实测可用。
+          每次重置注册后填邀请码获得两天VIP，注册邮箱随便填，邀请码填：LopLfGSB，填写地方在我的页面，"加入天喵伙伴推广计划"。节点不少，但我这大部分连不上，新加坡和香港实测可用。
         </div>
       </div>
       <div class="resource-item">
@@ -346,13 +359,13 @@
 
       <div class="resource-item">
         <div class="tool-header">
-          <span class="tool-name">涩涩软件（彩蛋）</span>
+          <span class="tool-name">（彩蛋）涩涩软件</span>
           <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="download-btn">点击下载</a>
         </div>
       </div>
       <div class="resource-item">
         <div class="tool-header">
-          <span class="tool-name">影视大全内含瑟瑟软件和动漫</span>
+          <span class="tool-name">（彩蛋）影视大全内含瑟瑟软件和动漫</span>
           <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="download-btn">点击下载</a>
         </div>
       </div>
@@ -547,15 +560,15 @@
         </div>
       </div>
 
-      <p style="margin-top:2.8rem; color:var(--warning); font-weight:500;">
-        2025年以前全部失效，已删除
+      <p style="margin-top:3rem; color:var(--warning); font-weight:500;">
+        2025年以前的全部失效，已删除
       </p>
     </div>
 
     <div class="follow-box">
-      <p>关注本号，持续获取免费魔法更新</p>
-      <p>本文档失效 → 后台回复 <span class="keyword">魔法</span></p>
-      <p>即可得到最新链接</p>
+      <p>关注本号，持续收集免费魔法</p>
+      <p>本文档失效去本号后台回复：<span class="keyword">魔法</span></p>
+      <p>即可获取最新文档链接</p>
     </div>
 
     <div class="group-box">
@@ -567,8 +580,8 @@
         class="qr-img"
       >
 
-      <h2 style="margin-top:3.5rem;">魔法备用群</h2>
-      <p>防止公众号被封，务必添加</p>
+      <h2 style="margin-top:4rem;">魔法备用群</h2>
+      <p>防止公众号被封务必添加本群</p>
       <img 
         src="https://i2.qyimage.store:2999/i/bd31bb43b28b4fb2" 
         alt="魔法备用群二维码" 
@@ -577,7 +590,7 @@
     </div>
 
     <footer>
-      信息分享用途 · 请遵守当地法律法规 · 2026 更新
+      本页面仅作信息整理 · 请遵守当地法律法规 · 2026 更新维护
     </footer>
 
   </div>

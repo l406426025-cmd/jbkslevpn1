@@ -165,6 +165,14 @@
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
     }
+    .qr-img {
+      display: block;
+      max-width: 240px;
+      margin: 1.5rem auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35), 0 0 15px var(--accent-glow);
+      border: 1px solid var(--border);
+    }
     .follow-box {
       background: rgba(124,58,237,0.12);
       border: 1px solid var(--accent);
@@ -327,11 +335,22 @@
 
     <div class="group-box">
       <h2>薅羊毛免费零撸副业圈子</h2>
-      <p style="font-size: 1.15rem; margin: 1.5rem 0;">扫码进群</p>
-      <!-- 如果有二维码图片，上传到仓库后替换 src -->
-      <!-- <img src="qrcode.png" alt="进群二维码" style="max-width:240px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.4);"> -->
-      <p class="qr-placeholder" style="color:var(--muted); margin-top:1rem;">（二维码请自行上传仓库并替换上方 img src 路径）</p>
-      <p style="margin-top: 2rem;">魔法备用群：防止公众号被封务必添加本群</p>
+      <p style="font-size: 1.15rem; margin: 1rem 0 1.5rem;">扫码进群</p>
+      <img 
+        src="https://i2.qyimage.store:2999/i/2e26026394214f57" 
+        alt="薅羊毛免费零撸副业圈子二维码" 
+        class="qr-img"
+        loading="lazy"
+      >
+
+      <h2 style="margin: 3rem 0 1rem;">魔法备用群</h2>
+      <p style="font-size: 1.15rem; margin: 1rem 0 1.5rem;">防止公众号被封务必添加本群</p>
+      <img 
+        src="https://i2.qyimage.store:2999/i/bd31bb43b28b4fb2" 
+        alt="魔法备用群二维码" 
+        class="qr-img"
+        loading="lazy"
+      >
     </div>
 
     <footer>

@@ -344,7 +344,6 @@
       line-height: 1.7;
       margin-bottom: 8px;
     }
-    /* 促销文字两端对齐优化 */
     .promo-text {
       text-align: justify;
       text-justify: inter-ideograph;
@@ -354,30 +353,23 @@
       hyphens: auto;
       word-break: normal;
     }
-    /* 大屏幕适配 */
     @media (min-width: 768px) {
       .container { padding: 24px; }
       h1 { font-size: 32px; }
       h2 { font-size: 24px; }
       .subtitle { font-size: 18px; max-width: 700px; }
-     
       .qrcode-section {
         flex-direction: row;
         gap: 32px;
         justify-content: center;
         align-items: stretch;
       }
-     
       .qrcode-card {
         flex: 1;
         max-width: 420px;
         min-width: 300px;
       }
-     
-      .qr-img {
-        max-width: 260px;
-      }
-     
+      .qr-img { max-width: 260px; }
       .btn-primary { width: auto; max-width: none; margin-top: 0; }
       .card { padding: 24px; }
     }
@@ -397,9 +389,11 @@
       <h1>免费魔法 · 2026 更新</h1>
       <div class="subtitle">免费魔法软件合集，持续更新维护</div>
     </header>
+
     <div class="alert">
       ⚠️ 注意：用了免费魔法以后，如果某些软件还是注册不了、网络异常、封号等情况，基本是因为免费魔法用的人多IP太脏，换一个其他免费魔法或者购买低价付费的，推荐本人自用3年的魔法纯净度还不错！
     </div>
+
     <div class="card">
       <h2>低价魔法列表（稳定3年）</h2>
       <div class="img-container">
@@ -424,6 +418,29 @@
         </div>
       </div>
     </div>
+
+    <!-- 新增独立彩蛋板块 -->
+    <div class="card">
+      <h2>彩蛋资源（额外福利）</h2>
+      <p style="color:var(--warning); font-weight:500; margin-bottom:16px;">
+        以下为额外娱乐资源，仅供学习参考，请注意合法合规使用
+      </p>
+      <div class="resource-list">
+        <div class="resource-item">
+          <div class="tool-header">
+            <span class="tool-name">（彩蛋）涩涩软件</span>
+            <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="btn btn-primary">点击下载</a>
+          </div>
+        </div>
+        <div class="resource-item">
+          <div class="tool-header">
+            <span class="tool-name">（彩蛋）影视大全，内含瑟瑟和动漫</span>
+            <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="btn btn-primary">点击下载</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="card">
       <h2>免费魔法列表（仅限安卓）</h2>
       <p>以下全是安卓破解魔法，本人非原创，只做长期收集聚合，安卓15也不确定哪个可以用，要自己试，每个手机情况不一样，用不了也没办法，安卓15就是很烦，免费魔法仅限安卓，其他的系统（iOS/Mac/Windows）都没有破解版。</p>
@@ -441,6 +458,7 @@
           </div>
         </div>
       </div>
+
       <h3 class="month">2026年3月资源（最新）</h3>
       <p style="color:var(--danger); margin-bottom: 1rem;">⚠️ 所有链接复制到浏览器打开！微信会拦截</p>
       <div class="resource-list">
@@ -463,18 +481,6 @@
           </div>
           <div class="note">
             通过邀请码可以白嫖，填写邀请码：kcqbxz1571 你可以获得免费7天30G，再加上本来得默认赠送1天2G，可以试用8天32G，另外这个魔法是专线，跨境电商还有用各种AI的可以用这个
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">（彩蛋）涩涩软件</span>
-            <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">（彩蛋）影视大全，内含瑟瑟和动漫</span>
-            <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="btn btn-primary">点击下载</a>
           </div>
         </div>
         <div class="resource-item">
@@ -514,6 +520,7 @@
           </div>
         </div>
       </div>
+
       <h3 class="month">2026年2月资源</h3>
       <p style="color:var(--danger);">⚠️ 链接请复制到浏览器打开，微信常拦截</p>
       <div class="resource-list">
@@ -548,6 +555,7 @@
           </div>
         </div>
       </div>
+
       <h3 class="month">2026年1月资源</h3>
       <p style="color:var(--danger);">⚠️ 链接请复制到浏览器打开，微信常拦截</p>
       <div class="resource-list">
@@ -634,6 +642,7 @@
         2025年以前的全部失效，已删除
       </p>
     </div>
+
     <div class="card">
       <h2>小姬永久免费订阅（全端）</h2>
       <p>以下全是小姬自己更新维护的免费订阅，万人骑订阅，不是很纯净，介意不要用，不限制系统和设备，最强备用防失联，下载代理软件导入订阅即可使用，推荐下载karing适合小白。</p>
@@ -658,11 +667,13 @@
         </div>
       </div>
     </div>
+
     <div class="highlight-box">
       <p style="font-size: 16px; font-weight: 500; margin-bottom: 16px;">关注本号（软姬工具箱），持续收集免费魔法</p>
       <p>本网页失效请去本号后台回复：<span class="keyword">魔法</span></p>
       <p>即可获取最新网页链接</p>
     </div>
+
     <div class="qrcode-section">
       <div class="qrcode-card">
         <h2>薅羊毛免费零撸副业圈子</h2>
@@ -675,10 +686,12 @@
         <img src="https://i2.qyimage.store:2999/i/bd31bb43b28b4fb2" alt="魔法备用群二维码" class="qr-img content-img">
       </div>
     </div>
+
     <footer>
       <p>本页面仅作信息整理 · 请遵守当地法律法规</p>
     </footer>
   </div>
+
   <script>
     // 主题切换逻辑
     const toggle = document.querySelector('.theme-toggle');

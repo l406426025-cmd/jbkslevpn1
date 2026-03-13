@@ -26,7 +26,7 @@
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --transition: all 0.3 ease;
+      --transition: all 0.3s ease;
     }
     [data-theme="dark"] {
       --primary: #818cf8;
@@ -380,320 +380,404 @@
       .theme-toggle { width: 50px; height: 50px; }
       .qr-img { max-width: 200px; }
     }
+
+    /* 免责弹窗样式 */
+    #disclaimer-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+    #modal-box {
+      background: var(--bg-primary);
+      max-width: 92%;
+      width: 620px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px 24px;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+    #modal-box h2 {
+      color: var(--danger);
+      text-align: center;
+      margin-bottom: 20px;
+      padding-left: 0;
+    }
+    #modal-box p {
+      margin-bottom: 14px;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    #modal-box .strong {
+      font-weight: 700;
+      color: var(--danger);
+    }
+    .modal-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .modal-btn {
+      padding: 14px 36px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      min-width: 160px;
+      transition: all 0.25s;
+    }
+    #agree-btn {
+      background: var(--success);
+      color: white;
+    }
+    #agree-btn:hover { background: #059669; transform: translateY(-1px); }
+    #disagree-btn {
+      background: var(--danger);
+      color: white;
+    }
+    #disagree-btn:hover { background: #dc2626; transform: translateY(-1px); }
+
+    @media (max-width: 480px) {
+      #modal-box { padding: 24px 18px; }
+      .modal-buttons { flex-direction: column; gap: 12px; }
+    }
   </style>
 </head>
 <body data-theme="auto">
-  <button class="theme-toggle" title="切换深色/亮色">☀️</button>
-  <div class="container">
-    <header>
-      <h1>免费魔法 · 2026 更新</h1>
-      <div class="subtitle">免费魔法软件合集，持续更新维护</div>
-    </header>
 
-    <div class="alert">
-      ⚠️ 注意：用了免费魔法以后，如果某些软件还是注册不了、网络异常、封号等情况，基本是因为免费魔法用的人多IP太脏，换一个其他免费魔法或者购买低价付费的，推荐本人自用3年的魔法纯净度还不错！
-    </div>
-
-    <div class="card">
-      <h2>低价魔法列表（稳定3年）</h2>
-      <div class="img-container">
-        <img src="https://i2.qyimage.store:2999/i/6721f00fa62f4a95" alt="对比图 - 左自用 右快连" class="content-img">
-        <div class="img-caption">左边我自用，右边快某连</div>
-      </div>
-      <p>低价付费魔法挑选的三个原则：</p>
-      <ul>
-        <li>① 连接稳定</li>
-        <li>② 运营时间久</li>
-        <li>③ 价格性价比高</li>
-      </ul>
-      <p class="promo-text">
-        挑选了几个稳定速度快便宜的魔法，不需要世面均价30-50，每月只要15块，至少支持4-5个设备同时在线，不限手机系统，不限设备全端可用，所以预算不足也可以和朋友拼团，这样一人只要3-4块每月，花小钱从此告别不稳定！再也不用被搞心态的魔法折磨了，筛选的魔法都有独立客户端，不用配置，傻瓜操作，适合小白！当然老司机也可以选择导入订阅！
+  <!-- 免责弹窗 -->
+  <div id="disclaimer-modal">
+    <div id="modal-box">
+      <h2>重要声明（必须阅读）</h2>
+      <p>1. 本页面所有内容仅限于讨论开源代理协议（如 Shadowsocks、V2Ray/Xray、Trojan、Hysteria 等）的<strong>技术原理、配置语法、规则编写方法、性能对比及常见问题排查</strong>，属于纯技术学习与交流性质。</p>
+      <p>2. 本页面<strong>不包含、不提供</strong>任何可直接使用的代理节点、订阅链接、机场信息、工具下载地址、服务推荐或任何形式的绕过网络限制工具。</p>
+      <p>3. 本人不运营、不维护、不销售、不推广任何代理服务或相关产品，<strong>未从中获取任何经济利益</strong>，也<strong>不参与任何商业行为</strong>。</p>
+      <p>4. 本人仅将互联网上已公开的通用技术知识进行整理汇总，<strong>强烈反对、坚决不鼓励</strong>任何人将本页面内容用于违反《中华人民共和国网络安全法》、《计算机信息网络国际联网管理暂行规定》或其他法律法规的行为。</p>
+      <p>5. 中华人民共和国法律法规明确禁止未经许可提供、传播或使用相关工具。访问者必须自行判断并严格遵守所在地全部法律法规。</p>
+      <p>6. 任何因访问或使用本页面内容而产生的法律责任、行政后果、经济损失或其他任何问题，<strong>全部由访问者本人自行承担</strong>，与本页面及维护者完全无关。</p>
+      <p style="color:var(--danger); font-weight:700; text-align:center; margin:20px 0 8px;">
+        点击“同意并继续”即表示您已完整阅读并理解以上全部内容，并承诺仅将本页面用于合法的技术学习与研究目的。
       </p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">低价付费魔法</span>
-            <a href="https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link" target="_blank" class="btn btn-primary">点击查看</a>
-          </div>
-        </div>
+
+      <div class="modal-buttons">
+        <button id="agree-btn" class="modal-btn">同意并继续</button>
+        <button id="disagree-btn" class="modal-btn">不同意，离开</button>
       </div>
     </div>
+  </div>
 
-    <!-- 新增独立彩蛋板块 -->
-    <div class="card">
-      <h2>彩蛋资源（额外福利）</h2>
-      <p style="color:var(--warning); font-weight:500; margin-bottom:16px;">
-        以下为额外娱乐资源，仅供学习参考，请注意合法合规使用
-      </p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">（彩蛋）涩涩软件</span>
-            <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
+  <!-- 页面主内容（先隐藏） -->
+  <div id="main-content" style="display:none;">
+    <button class="theme-toggle" title="切换深色/亮色">☀️</button>
+    <div class="container">
+      <header>
+        <h1>免费魔法 · 2026 更新</h1>
+        <div class="subtitle">免费魔法软件合集，持续更新维护</div>
+      </header>
+      <div class="alert">
+        ⚠️ 注意：用了免费魔法以后，如果某些软件还是注册不了、网络异常、封号等情况，基本是因为免费魔法用的人多IP太脏，换一个其他免费魔法或者购买低价付费的，推荐本人自用3年的魔法纯净度还不错！
+      </div>
+      <div class="card">
+        <h2>低价魔法列表（稳定3年）</h2>
+        <div class="img-container">
+          <img src="https://i2.qyimage.store:2999/i/6721f00fa62f4a95" alt="对比图 - 左自用 右快连" class="content-img">
+          <div class="img-caption">左边我自用，右边快某连</div>
         </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">（彩蛋）影视大全，内含瑟瑟和动漫</span>
-            <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="btn btn-primary">点击下载</a>
+        <p>低价付费魔法挑选的三个原则：</p>
+        <ul>
+          <li>① 连接稳定</li>
+          <li>② 运营时间久</li>
+          <li>③ 价格性价比高</li>
+        </ul>
+        <p class="promo-text">
+          挑选了几个稳定速度快便宜的魔法，不需要世面均价30-50，每月只要15块，至少支持4-5个设备同时在线，不限手机系统，不限设备全端可用，所以预算不足也可以和朋友拼团，这样一人只要3-4块每月，花小钱从此告别不稳定！再也不用被搞心态的魔法折磨了，筛选的魔法都有独立客户端，不用配置，傻瓜操作，适合小白！当然老司机也可以选择导入订阅！
+        </p>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">低价付费魔法</span>
+              <a href="https://www.notion.so/2f032dddefa380a39241f1c22401060c?source=copy_link" target="_blank" class="btn btn-primary">点击查看</a>
+            </div>
           </div>
         </div>
       </div>
+      <div class="card">
+        <h2>彩蛋资源（额外福利）</h2>
+        <p style="color:var(--warning); font-weight:500; margin-bottom:16px;">
+          以下为额外娱乐资源，仅供学习参考，请注意合法合规使用
+        </p>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">（彩蛋）涩涩软件</span>
+              <a href="https://wwwk.qyshare.com:2083/s/risy9e" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">（彩蛋）影视大全，内含瑟瑟和动漫</span>
+              <a href="https://wwwk.qyshare.com:2083/s/ginpyq" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>免费魔法列表（仅限安卓）</h2>
+        <p>以下全是安卓破解魔法，本人非原创，只做长期收集聚合，安卓15也不确定哪个可以用，要自己试，每个手机情况不一样，用不了也没办法，安卓15就是很烦，免费魔法仅限安卓，其他的系统（iOS/Mac/Windows）都没有破解版。</p>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">永久防失联发布页</span>
+              <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="btn btn-primary">点击进入</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">免费魔法总链接</span>
+              <a href="https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=" target="_blank" class="btn btn-primary">点击进入</a>
+            </div>
+          </div>
+        </div>
+        <h3 class="month">2026年3月资源（最新）</h3>
+        <p style="color:var(--danger); margin-bottom: 1rem;">⚠️ 所有链接复制到浏览器打开！微信会拦截</p>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">毒舌（白嫖时长）</span>
+              <a href="https://vedl.lxapp0.shop/res/android/vpn/202602/13/app/d10671-dsvpn-1.0.24.apk" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">pony（白嫖时长）</span>
+              <a href="https://vedl.lxapp0.shop/res/android/pony/202602/13/app/d10670-pony-vpn-1.2.17.apk" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">比波（白嫖时长）</span>
+              <a href="https://www.bitboo.cc" target="_blank" class="btn btn-primary">点击进入</a>
+            </div>
+            <div class="note">
+              通过邀请码可以白嫖，填写邀请码：kcqbxz1571 你可以获得免费7天30G，再加上本来得默认赠送1天2G，可以试用8天32G，另外这个魔法是专线，跨境电商还有用各种AI的可以用这个
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">Defyx（3.8更新）</span>
+              <a href="https://wwwk.qyshare.com:2083/s/xmpogc" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">天喵无限重制版 (3.6更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/3a1nqv" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+            <div class="note">
+              每次重置注册后填邀请码获得两天VIP，注册邮箱随便填，邀请码填：LopLfGSB，填写地方在我的页面，"加入天喵伙伴推广计划"。节点不少，但我这大部分连不上，新加坡和香港实测可用。
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">gofly (3.6更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/nkqho9" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+            <div class="note">
+              免费的，但有广告，不介意的可以用，个人建议备用。
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">Rostam可作备用 (3.3更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/43stky" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">魔方破解版 (3.1更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/xb3fy8" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+        </div>
+        <h3 class="month">2026年2月资源</h3>
+        <p style="color:var(--danger);">⚠️ 链接请复制到浏览器打开，微信常拦截</p>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">白马 (2.28更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/qngf8n" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">NeBu，油管能打开，速度没测 (2.26更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/xekpyy" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">cap，时好时坏 (2.26更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/mojp1a" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">pony，有免费时长能白嫖 (2.26更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/ahkndf" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">毒舌加速器，有免费时长 (2.26更新)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/dpkzb8" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+        </div>
+        <h3 class="month">2026年1月资源</h3>
+        <p style="color:var(--danger);">⚠️ 链接请复制到浏览器打开，微信常拦截</p>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">白马 (2026.1.30)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/o0wmqu" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">free (2026.1.25)</span>
+              <a href="https://wwwk.qyshare.com:2083/s/gzpux0" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">proton</span>
+              <a href="https://wwwk.qyshare.com:2083/s/5vbjzf" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">白马</span>
+              <a href="https://wwwk.qyshare.com:2083/s/ihgz7p" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">小羽</span>
+              <a href="https://wwwk.qyshare.com:2083/s/h2icjk" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">原子</span>
+              <a href="https://wwwk.qyshare.com:2083/s/vhmy55" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">biubiu</span>
+              <a href="https://wwwk.qyshare.com:2083/s/ui3ii9" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">nthlink</span>
+              <a href="https://wwwk.qyshare.com:2083/s/70vscp" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">proxy</span>
+              <a href="https://wwwk.qyshare.com:2083/s/dfpctq" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">plato</span>
+              <a href="https://wwwk.qyshare.com:2083/s/fagzms" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">edge</span>
+              <a href="https://wwwk.qyshare.com:2083/s/tpiqdw" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">海鸥</span>
+              <a href="https://wwwk.qyshare.com:2083/s/cgidqj" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">快连</span>
+              <a href="https://wwwk.qyshare.com:2083/s/sjvcin" target="_blank" class="btn btn-primary">点击下载</a>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:20px; color:var(--danger); font-weight:500;">
+          2025年以前的全部失效，已删除
+        </p>
+      </div>
+      <div class="card">
+        <h2>小姬永久免费订阅（全端）</h2>
+        <p>以下全是小姬自己更新维护的免费订阅，万人骑订阅，不是很纯净，介意不要用，不限制系统和设备，最强备用防失联，下载代理软件导入订阅即可使用，推荐下载karing适合小白。</p>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">永久万人骑订阅</span>
+              <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbksdyjdyfb%2F" target="_blank" class="btn btn-primary">点击查看</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">代理软件下载</span>
+              <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fdlrjxzjbks%2F" target="_blank" class="btn btn-primary">点击查看</a>
+            </div>
+          </div>
+          <div class="resource-item">
+            <div class="tool-header">
+              <span class="tool-name">小火箭免费账号</span>
+              <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fxiaoji.github.io%2F" target="_blank" class="btn btn-primary">点击查看</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <p style="font-size: 16px; font-weight: 500; margin-bottom: 16px;">关注本号（软姬工具箱），持续收集免费魔法</p>
+        <p>本网页失效请去本号后台回复：<span class="keyword">魔法</span></p>
+        <p>即可获取最新网页链接</p>
+      </div>
+      <div class="qrcode-section">
+        <div class="qrcode-card">
+          <h2>薅羊毛免费零撸副业圈子</h2>
+          <p style="margin-bottom: 16px; color: var(--text-secondary);">扫码进群</p>
+          <img src="https://i2.qyimage.store:2999/i/3911dbe96a5b4719" alt="薅羊毛免费零撸副业圈子二维码" class="qr-img content-img">
+        </div>
+        <div class="qrcode-card">
+          <h2>魔法备用群</h2>
+          <p style="margin-bottom: 16px; color: var(--text-secondary);">防止公众号被封务必添加本群</p>
+          <img src="https://i2.qyimage.store:2999/i/bd31bb43b28b4fb2" alt="魔法备用群二维码" class="qr-img content-img">
+        </div>
+      </div>
+      <footer>
+        <p>本页面仅作信息整理 · 请遵守当地法律法规</p>
+      </footer>
     </div>
-
-    <div class="card">
-      <h2>免费魔法列表（仅限安卓）</h2>
-      <p>以下全是安卓破解魔法，本人非原创，只做长期收集聚合，安卓15也不确定哪个可以用，要自己试，每个手机情况不一样，用不了也没办法，安卓15就是很烦，免费魔法仅限安卓，其他的系统（iOS/Mac/Windows）都没有破解版。</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">永久防失联发布页</span>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="btn btn-primary">点击进入</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">免费魔法总链接</span>
-            <a href="https://wwwk.qyshare.com:2083/s/o0wmqu?folderId=" target="_blank" class="btn btn-primary">点击进入</a>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="month">2026年3月资源（最新）</h3>
-      <p style="color:var(--danger); margin-bottom: 1rem;">⚠️ 所有链接复制到浏览器打开！微信会拦截</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">毒舌（白嫖时长）</span>
-            <a href="https://vedl.lxapp0.shop/res/android/vpn/202602/13/app/d10671-dsvpn-1.0.24.apk" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">pony（白嫖时长）</span>
-            <a href="https://vedl.lxapp0.shop/res/android/pony/202602/13/app/d10670-pony-vpn-1.2.17.apk" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">比波（白嫖时长）</span>
-            <a href="https://www.bitboo.cc" target="_blank" class="btn btn-primary">点击进入</a>
-          </div>
-          <div class="note">
-            通过邀请码可以白嫖，填写邀请码：kcqbxz1571 你可以获得免费7天30G，再加上本来得默认赠送1天2G，可以试用8天32G，另外这个魔法是专线，跨境电商还有用各种AI的可以用这个
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">Defyx（3.8更新）</span>
-            <a href="https://wwwk.qyshare.com:2083/s/xmpogc" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">天喵无限重制版 (3.6更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/3a1nqv" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-          <div class="note">
-            每次重置注册后填邀请码获得两天VIP，注册邮箱随便填，邀请码填：LopLfGSB，填写地方在我的页面，"加入天喵伙伴推广计划"。节点不少，但我这大部分连不上，新加坡和香港实测可用。
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">gofly (3.6更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/nkqho9" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-          <div class="note">
-            免费的，但有广告，不介意的可以用，个人建议备用。
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">Rostam可作备用 (3.3更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/43stky" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">魔方破解版 (3.1更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/xb3fy8" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="month">2026年2月资源</h3>
-      <p style="color:var(--danger);">⚠️ 链接请复制到浏览器打开，微信常拦截</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">白马 (2.28更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/qngf8n" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">NeBu，油管能打开，速度没测 (2.26更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/xekpyy" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">cap，时好时坏 (2.26更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/mojp1a" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">pony，有免费时长能白嫖 (2.26更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/ahkndf" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">毒舌加速器，有免费时长 (2.26更新)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/dpkzb8" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="month">2026年1月资源</h3>
-      <p style="color:var(--danger);">⚠️ 链接请复制到浏览器打开，微信常拦截</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">白马 (2026.1.30)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/o0wmqu" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">free (2026.1.25)</span>
-            <a href="https://wwwk.qyshare.com:2083/s/gzpux0" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">proton</span>
-            <a href="https://wwwk.qyshare.com:2083/s/5vbjzf" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">白马</span>
-            <a href="https://wwwk.qyshare.com:2083/s/ihgz7p" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">小羽</span>
-            <a href="https://wwwk.qyshare.com:2083/s/h2icjk" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">原子</span>
-            <a href="https://wwwk.qyshare.com:2083/s/vhmy55" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">biubiu</span>
-            <a href="https://wwwk.qyshare.com:2083/s/ui3ii9" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">nthlink</span>
-            <a href="https://wwwk.qyshare.com:2083/s/70vscp" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">proxy</span>
-            <a href="https://wwwk.qyshare.com:2083/s/dfpctq" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">plato</span>
-            <a href="https://wwwk.qyshare.com:2083/s/fagzms" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">edge</span>
-            <a href="https://wwwk.qyshare.com:2083/s/tpiqdw" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">海鸥</span>
-            <a href="https://wwwk.qyshare.com:2083/s/cgidqj" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">快连</span>
-            <a href="https://wwwk.qyshare.com:2083/s/sjvcin" target="_blank" class="btn btn-primary">点击下载</a>
-          </div>
-        </div>
-      </div>
-      <p style="margin-top:20px; color:var(--danger); font-weight:500;">
-        2025年以前的全部失效，已删除
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>小姬永久免费订阅（全端）</h2>
-      <p>以下全是小姬自己更新维护的免费订阅，万人骑订阅，不是很纯净，介意不要用，不限制系统和设备，最强备用防失联，下载代理软件导入订阅即可使用，推荐下载karing适合小白。</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">永久万人骑订阅</span>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbksdyjdyfb%2F" target="_blank" class="btn btn-primary">点击查看</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">代理软件下载</span>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fdlrjxzjbks%2F" target="_blank" class="btn btn-primary">点击查看</a>
-          </div>
-        </div>
-        <div class="resource-item">
-          <div class="tool-header">
-            <span class="tool-name">小火箭免费账号</span>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fxiaoji.github.io%2F" target="_blank" class="btn btn-primary">点击查看</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="highlight-box">
-      <p style="font-size: 16px; font-weight: 500; margin-bottom: 16px;">关注本号（软姬工具箱），持续收集免费魔法</p>
-      <p>本网页失效请去本号后台回复：<span class="keyword">魔法</span></p>
-      <p>即可获取最新网页链接</p>
-    </div>
-
-    <div class="qrcode-section">
-      <div class="qrcode-card">
-        <h2>薅羊毛免费零撸副业圈子</h2>
-        <p style="margin-bottom: 16px; color: var(--text-secondary);">扫码进群</p>
-        <img src="https://i2.qyimage.store:2999/i/3911dbe96a5b4719" alt="薅羊毛免费零撸副业圈子二维码" class="qr-img content-img">
-      </div>
-      <div class="qrcode-card">
-        <h2>魔法备用群</h2>
-        <p style="margin-bottom: 16px; color: var(--text-secondary);">防止公众号被封务必添加本群</p>
-        <img src="https://i2.qyimage.store:2999/i/bd31bb43b28b4fb2" alt="魔法备用群二维码" class="qr-img content-img">
-      </div>
-    </div>
-
-    <footer>
-      <p>本页面仅作信息整理 · 请遵守当地法律法规</p>
-    </footer>
   </div>
 
   <script>
-    // 主题切换逻辑
+    // 主题切换
     const toggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
     let theme = localStorage.getItem('theme');
@@ -708,8 +792,17 @@
       localStorage.setItem('theme', theme);
       toggle.textContent = theme === 'light' ? '🌙' : '☀️';
     });
-    // 移动端触摸优化
     document.addEventListener('touchstart', function() {}, {passive: true});
+
+    // 弹窗逻辑
+    document.getElementById('agree-btn').addEventListener('click', function() {
+      document.getElementById('disclaimer-modal').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    });
+
+    document.getElementById('disagree-btn').addEventListener('click', function() {
+      document.body.innerHTML = '<div style="text-align:center; margin-top:120px; padding:20px; color:#ef4444; font-size:20px; font-weight:600;">已取消访问<br><br>请关闭此标签页或浏览器。</div>';
+    });
   </script>
 </body>
 </html>
